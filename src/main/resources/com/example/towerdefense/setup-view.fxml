@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" spacing="30.0" xmlns:fx="http://javafx.com/fxml/" fx:controller="com.example.towerdefense.SetupController">
+    <Label text="Game Setup">
+        <font>
+            <Font name="System Bold" size="32.0" />
+        </font>
+    </Label>
+    <VBox alignment="CENTER">
+        <Label text="Enter Your Name:" />
+        <TextField fx:id="nameField" prefWidth="200.0" maxWidth="200.0" promptText="Player Name" />
+        <Label text="Choose Difficulty Level:">
+            <VBox.margin>
+                <Insets top="20.0" />
+            </VBox.margin>
+        </Label>
+        <ChoiceBox fx:id="difficultyField" prefWidth="150.0" />
+    </VBox>
+    <Label fx:id="alertLabel" textFill="RED" />
+    <Button onAction="#startGame" text="Start Game" />
+</VBox>

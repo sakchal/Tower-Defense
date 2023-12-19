@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.shape.Polyline?>
+<?import javafx.scene.Group?>
+<VBox alignment="CENTER" xmlns:fx="http://javafx.com/fxml/">
+
+<!--Name & Money Labels-->
+    <HBox alignment="CENTER" viewOrder="-1.0">
+        <padding><Insets bottom="15.0" left="15.0" right="15.0" top="15.0" /></padding>
+        <Label fx:id="nameLabel">
+            <padding><Insets bottom="15.0" left="15.0" right="15.0" top="15.0" /></padding>
+            <font><Font name="Times New Roman" size="20.0" /></font>
+        </Label>
+        <Label fx:id="moneyLabel">
+            <padding><Insets bottom="15.0" left="15.0" right="15.0" top="15.0" /></padding>
+            <font><Font name="Times New Roman" size="20.0" /></font>
+        </Label>
+      <Button fx:id="combatBtn" mnemonicParsing="false" text="Start Combat" />
+    </HBox>
+
+<!--Game Map-->
+    <AnchorPane fx:id="map" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="1600.0" style="-fx-background-color: AntiqueWhite;">
+        <Polyline fx:id="path" stroke="#eb7f7f"/>
+        <Group fx:id="monument">
+            <ImageView fitHeight="100.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@images/monument.jpg" />
+            </ImageView>
+            <Label fx:id="healthLabel" layoutY="110.0">
+                <font><Font name="Times New Roman" size="16.0" /></font>
+            </Label>
+        </Group>
+
+    </AnchorPane>
+
+<!--Tower Shop-->
+    <VBox alignment="BOTTOM_CENTER">
+        <padding><Insets bottom="15.0" left="15.0" right="15.0" top="15.0" /></padding>
+        <Label>
+            Tower Shop
+            <font><Font name="Times New Roman" size="20.0" /></font>
+        </Label>
+        <Label fx:id="shopAlertLabel">
+            Select a tower to purchase
+            <padding><Insets bottom="15.0" left="15.0" right="15.0" top="15.0" /></padding>
+            <font><Font name="Times New Roman" size="18.0" /></font>
+        </Label>
+        <GridPane alignment="CENTER" fx:id="towerShop">
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" />
+                <ColumnConstraints halignment="CENTER" />
+                <ColumnConstraints halignment="CENTER" />
+                <ColumnConstraints halignment="CENTER" />
+                <ColumnConstraints halignment="CENTER" />
+                <ColumnConstraints halignment="CENTER" />
+                <ColumnConstraints halignment="CENTER" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+            </rowConstraints>
+        </GridPane>
+    </VBox>
+</VBox>

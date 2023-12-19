@@ -1,0 +1,110 @@
+M6 Tests:
+ - towerUpgradeAttributesTest(): (M6) Tests if all level upgrades increase either the range or attack attribute for each tower.
+ - towerUpgradeMaxLevelTest(): (M6) Tests if towers can no longer upgrade once they reach max level.
+ - upgradeTowerSufficientMoneyTest(): (M6) Tests if money is correctly spent & towers are upgraded when player has sufficient money.
+ - upgradeTowerInsufficientMoneyTest(): (M6) Tests if money isn't spent & towers aren't upgraded when player has insufficient money.
+ - bossAttributeBalanceTest(): (M6) Tests if the boss enemy has higher health & attack attributes than all other enemies.
+ - bossEnemySpawnTest(): (M6) Tests if the boss enemy appears spawns last and only once in the enemy queue.
+ - allEnemySpawnTest(): (M6) Tests if all enemy types are present in the enemy queue.
+ - upgradesPurchasedCountTest(): (M6) Tests if upgrades purchased count is correctly updated when towers are upgraded.
+ - moneySpentCountTest(): (M6) Tests if money spent count is correctly updated when money is spent.
+ - bossAttackStrengthTest(): (M6) Tests if the enemy boss's attack strength is high enough to always destroy the monument.
+
+M5 Tests:
+ - takeDamageTest(): (M5) Tests if enemy can take damage up to 0 health and not into negative health.
+ - towerInRangeTest(): (M5) Tests if tower isInRange method correctly identifies an enemy in range.
+ - towerInRangeTest2(): (M5) Tests if tower isInRange method correctly identifies an enemy near edge of range.
+ - towerNotInRangeTest(): (M5) Tests if tower isInRange method correctly identifies an enemy out of range.
+ - towerNotInRangeTest2(): (M5) Tests if tower isInRange method correctly identifies an enemy just outside of range.
+ - isUnderAttack(): (M5) Tests if enemy is correctly set to underAttack when in tower range.
+ - isUnderAttack2(): (M5) Tests if enemy is correctly set to not underAttack when in tower range.
+ - testVisibility(): (M5) Tests if enemy setVisibility method is able to update the enemy's visibility.
+ - testUnderAttackAnimation(): (M5) Tests if enemy flash animation runs when underAttack.
+ - testUnderAttackAnimation2(): (M5) Tests if enemy stops flashing when not under attack.
+
+M4 Tests:
+
+- monumentTakeDamageTest(): (M4) Tests whether the monument's health decreases after taking damage
+- monumentAttackVariationTest(): (M4) Tests whether the damage dealt to the monument by each different enemy type is varied
+- monumentNegativeHealthTest(): (M4) Tests if monuments health is prevented from being negative
+- enemyStopTest(): (M4) Tests if enemy stops at monument's location
+- enemyAttributeVariationTest(): (M4) Tests if each enemy has unique attributes (health & attack strength) from each other.
+- enemyImageLoadTest(): (M4) Tests if the images for every enemy can be found & loaded
+- enemyTakeDamageTest(): (M4) Tests if takeDamage correctly updates an enemy's health
+- enemyGetCenterPositionTest(): (M4) Tests if getters correctly get the enemy's center (x, y) position
+- enemyTranslateTest(): (M4) Tests if translating the enemy correctly update the enemies center (x, y) position
+- enemyImagePathVariationTest(): (M4) Tests whether each enemy type has a different image path
+
+M3 Tests:
+
+@SetupControllerTest
+- validNameTest():
+This test is part of the M2 implementation requirements and checks whether or not an inputted name, "Adityaa" is marked
+as valid. Since a valid name can not be blank (several spaces or no inputted characters), "Adityaa", in
+this case, would be a valid name as it does not suffer from the above two pitfalls. The isValidName() method should
+return true. It does, and the inputted case does pass the unit test.
+
+- invalidNameTest():
+This test is part of the M2 implementation requirements and check whether or not a name, "     ", is marked as invalid.
+Since a valid name can not be blank (several spaces or no inputted characters), "     ", in this case would be
+an invalid name as it suffers from one of the above two pitfalls. The name is entirely made up of spaces,
+and thus the isValidName() method should return false. It does, and the inputted case does pass the unit
+test.
+
+-invalidNameTest2():
+This test is part of the M2 implementation requirements and check whether or not a name, "", is marked as invalid.
+Since a valid name can not be blank (several spaces or no inputted characters), "", in this case would an invalid
+name as it suffers from one of the above two pitfalls. The name is made up no characters, and thus the isValidName()
+method should return false. It does, and the inputted case does not pass the unit test.
+
+-validDifficultyTest():
+This test is part of the M2 implementation requirements, and checks whether or not a difficulty, "Normal", is marked as
+valid. The three valid difficulties are Easy, Normal, and Hard, and if an inputted difficulty is one of them, the
+isValidDifficulty() method should return true. The difficulty, "Normal", is indeed on of the three choices for valid
+difficulty, and the isValidDifficulty() method should return true. It does, and the inputted case does pass the unit
+test.
+
+invalidDifficultyTest():
+This test is part of the M2 implementation requirements, and checks whether or not a difficulty, "Super Hard", is marked
+as invalid. The three valid difficulties are Easy, Normal, and Hard, and if an inputted difficulty is one of them, the
+isValidDifficulty() method should return true. The difficulty, "Super Hard", is not of the three choices for valid
+difficulty, and the isValidDifficulty() method should return false. It does, and the inputted case does pass the unit
+test.
+
+invalidDifficultyTest2():
+This test is part of the M2 implementation requirements, and checks whether or not a difficulty, "", is marked
+as invalid. The three valid difficulties are Easy, Normal, and Hard, and if an inputted difficulty is one of them, the
+isValidDifficulty() method should return true. The difficulty, "", is not of the three choices for valid
+difficulty, and the isValidDifficulty() method should return false. It does, and the inputted case does pass the unit
+test.
+
+@TowerTest
+-towerCostVariationTest():
+This test is part of the M3 implementation requirements, and checks whether or not each tower's cost changes with
+difficulty. For each tower, a new HashSet is created, and then iterates through each difficulty. The case should be
+that for each difficulty for the same tower, the cost should be the different. The add() method for the HashSet
+should return true if the element, or the specified cost, is not already present in the HashSet when it is added.
+For each tower, the cost is different depending on the difficulty, and each inputted tower does pass the unit test.
+
+-towerAttributeVariationTest():
+This test is part of the M3 implementation requirements, and checks whether or not each tower's attributes (Health,
+Attack) changes with difficulty. For each tower, a new HashSet is created, and then iterates through each
+difficulty. The case should be that for each difficulty for the same tower, the Health and Attack should be different,
+and the add() method for the HashSet should return true if the element, or the specified health and attack strength
+pair, is not already present in the HashSet when it is added. For each tower, the Health and Attack is different
+depending on the difficulty, and each inputted tower does pass the unit test.
+
+-towerImageTest():
+This test is part of the M3 implementation requirements, and checks whether each tower's image is able to be rendered
+and displayed on the screen. The unit test goes through each type of tower, and check whether each tower's
+getImagePath() method is working. If each tower is able to render it's appropriate image, and it's not null, then the
+test passes. The appropriate images are able to be rendered, and all the cases do pass the unit test.
+
+@GameControllerTest
+- playerMoneyVariationTest():
+This test if part of the M2 implementation requirements, and tests if player has different starting money amounts for
+each difficulty level. The test loops through all possible difficulty levels to ensure the money value is unique for
+each.
+
+
+
